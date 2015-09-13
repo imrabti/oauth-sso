@@ -24,6 +24,7 @@
         <staticResourcesDirectory>${project.build.outputDirectory}/static</staticResourcesDirectory>
 
         <java.version>1.7</java.version>
+        <javax-validation.version>1.1.0.Final</javax-validation.version>
         <gwt.version>2.7.0</gwt.version>
         <gwtp.version>1.5</gwtp.version>
         <gin.version>2.1.2</gin.version>
@@ -95,6 +96,13 @@
             <artifactId>gin</artifactId>
             <version>${gin.version}</version>
             <scope>compile</scope>
+        </dependency>
+
+        <!-- Other dependencies -->
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <version>${javax-validation.version}</version>
         </dependency>
     </dependencies>
 

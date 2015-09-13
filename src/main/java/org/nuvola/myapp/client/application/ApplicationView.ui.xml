@@ -3,6 +3,6 @@
     <g:HTMLPanel>
         This is the first View Of the application ...
 
-        <g:Button ui:field="Click me please!!!"/>
+        <g:Button text="Click me please!!!"/>
     </g:HTMLPanel>
 </ui:UiBinder>
