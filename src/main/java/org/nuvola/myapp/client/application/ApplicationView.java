@@ -1,20 +1,17 @@
 package org.nuvola.myapp.client.application;
 
-import com.google.gwt.core.client.GWT;
-import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HTMLPanel;
+import javax.inject.Inject;
 
-/**
- * Created by imrabti on 9/9/15.
- */
-public class ApplicationView extends Composite {
-    interface ApplicationViewUiBinder extends UiBinder<HTMLPanel, ApplicationView> {
+import com.google.gwt.uibinder.client.UiBinder;
+import com.google.gwt.user.client.ui.HTMLPanel;
+import com.gwtplatform.mvp.client.ViewWithUiHandlers;
+
+public class ApplicationView extends ViewWithUiHandlers<ApplicationUiHandlers> implements ApplicationPresenter.MyView {
+    interface Binder extends UiBinder<HTMLPanel, ApplicationView> {
     }
 
-    private static ApplicationViewUiBinder ourUiBinder = GWT.create(ApplicationViewUiBinder.class);
-
-    public ApplicationView() {
-        initWidget(ourUiBinder.createAndBindUi(this));
+    @Inject
+    ApplicationView(Binder uiBinder) {
+        initWidget(uiBinder.createAndBindUi(this));
     }
 }
