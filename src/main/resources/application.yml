@@ -5,11 +5,11 @@ server:
 security:
   user:
     password: user
-  ignored: /,/favicon.ico,/index.html,/home.html,/dashboard.html,/js/**,/css/**,/webjars/**
+  ignored: /myapp/**,/js/**,/css/**,/webjars/**,/favicon.ico
   sessions: ALWAYS
   oauth2:
     sso:
-      loginPath: /dashboard/login
+      loginPath: /
 management:
   security:
     role: HERO
@@ -17,7 +17,6 @@ management:
 logging:
   level:
     org.springframework.security: DEBUG
-    com.netflix.discovery: 'OFF'
 
 ---
 spring:
