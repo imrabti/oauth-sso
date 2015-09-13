@@ -5,7 +5,7 @@ server:
 security:
   user:
     password: user
-  ignored: /myapp/**,/js/**,/css/**,/webjars/**,/favicon.ico
+  ignored: /favicon.ico
   sessions: ALWAYS
   oauth2:
     sso:
