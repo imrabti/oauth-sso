@@ -23,8 +23,8 @@ security:
     client:
       accessTokenUri: http://localhost:8080/uaa/oauth/token
       userAuthorizationUri: http://localhost:8080/uaa/oauth/authorize
-      clientId: acme
-      clientSecret: acmesecret
+      clientId: myapp
+      clientSecret: KDV3FT2wCMnmzwzH
     resource:
       jwt:
         keyValue: |
