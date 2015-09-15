@@ -9,7 +9,7 @@ security:
   sessions: ALWAYS
   oauth2:
     sso:
-      loginPath: /
+      loginPath: /login
 
 logging:
   level:
