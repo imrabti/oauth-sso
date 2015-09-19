@@ -32,22 +32,18 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-security</artifactId>
-        </dependency>
+        <!-- Spring boot dependencies -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <!-- OAuth Server provider dependencies -->
         <dependency>
-            <groupId>org.springframework.security.oauth</groupId>
-            <artifactId>spring-security-oauth2</artifactId>
-            <version>${spring-oauth2.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-jwt</artifactId>
+            <groupId>org.nuvola.oauth</groupId>
+            <artifactId>shared</artifactId>
+            <version>${project.version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <!-- Google Web Toolkit dependencies -->
