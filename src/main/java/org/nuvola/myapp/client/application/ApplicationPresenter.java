@@ -5,7 +5,7 @@ import javax.inject.Inject;
 import org.nuvola.myapp.client.NameTokens;
 import org.nuvola.myapp.client.application.ApplicationPresenter.MyProxy;
 import org.nuvola.myapp.client.application.ApplicationPresenter.MyView;
-import org.nuvola.myapp.client.util.CurrentUser;
+import org.nuvola.oauth.client.util.CurrentUser;
 
 import com.google.web.bindery.event.shared.EventBus;
 import com.gwtplatform.mvp.client.HasUiHandlers;
