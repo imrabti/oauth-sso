@@ -5,13 +5,9 @@ import javax.inject.Inject;
 import org.nuvola.myapp.client.NameTokens;
 import org.nuvola.myapp.client.application.ApplicationPresenter.MyProxy;
 import org.nuvola.myapp.client.application.ApplicationPresenter.MyView;
-import org.nuvola.myapp.client.services.SessionService;
-import org.nuvola.myapp.client.util.AbstractAsyncCallback;
-import org.nuvola.oauth.shared.UserProfile;
+import org.nuvola.myapp.client.util.CurrentUser;
 
-import com.google.gwt.user.client.Window;
 import com.google.web.bindery.event.shared.EventBus;
-import com.gwtplatform.dispatch.rest.client.RestDispatch;
 import com.gwtplatform.mvp.client.HasUiHandlers;
 import com.gwtplatform.mvp.client.Presenter;
 import com.gwtplatform.mvp.client.View;
@@ -26,36 +22,25 @@ public class ApplicationPresenter extends Presenter<MyView, MyProxy> implements 
     }
 
     interface MyView extends View, HasUiHandlers<ApplicationUiHandlers> {
+        void welcomeUser(String firstName, String lastName);
     }
 
-    private final RestDispatch dispatch;
-    private final SessionService sessionService;
+    private final CurrentUser currentUser;
 
     @Inject
     ApplicationPresenter(EventBus eventBus,
                          MyView view,
                          MyProxy proxy,
-                         RestDispatch dispatch,
-                         SessionService sessionService) {
+                         CurrentUser currentUser) {
         super(eventBus, view, proxy, RevealType.Root);
 
-        this.dispatch = dispatch;
-        this.sessionService = sessionService;
+        this.currentUser = currentUser;
 
         getView().setUiHandlers(this);
     }
 
     @Override
     protected void onReveal() {
-        loadCurrentUser();
-    }
-
-    private void loadCurrentUser() {
-        dispatch.execute(sessionService.currentUser(), new AbstractAsyncCallback<UserProfile>() {
-            @Override
-            public void onReceive(UserProfile profile) {
-                Window.alert("You are authenticated : " + profile.getUserName());
-            }
-        });
+        getView().welcomeUser(currentUser.getFirstName(), currentUser.getLastName());
     }
 }
