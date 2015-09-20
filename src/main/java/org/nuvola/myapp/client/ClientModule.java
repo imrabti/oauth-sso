@@ -1,5 +1,8 @@
 package org.nuvola.myapp.client;
 
+import org.nuvola.myapp.client.application.ApplicationModule;
+import org.nuvola.myapp.client.services.ServiceModule;
+
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.gwtplatform.mvp.client.annotations.DefaultPlace;
 import com.gwtplatform.mvp.client.annotations.ErrorPlace;
@@ -7,8 +10,6 @@ import com.gwtplatform.mvp.client.annotations.UnauthorizedPlace;
 import com.gwtplatform.mvp.client.gin.DefaultModule;
 import com.gwtplatform.mvp.client.proxy.DefaultPlaceManager;
 import com.gwtplatform.mvp.shared.proxy.RouteTokenFormatter;
-import org.nuvola.myapp.client.application.ApplicationModule;
-import org.nuvola.myapp.client.services.ServiceModule;
 
 public class ClientModule extends AbstractGinModule {
     @Override

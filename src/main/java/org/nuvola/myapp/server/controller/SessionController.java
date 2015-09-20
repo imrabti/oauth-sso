@@ -2,8 +2,8 @@ package org.nuvola.myapp.server.controller;
 
 import java.security.Principal;
 
-import org.nuvola.myapp.server.security.SecurityContext;
-import org.nuvola.myapp.shared.vo.CurrentUser;
+import org.nuvola.oauth.server.security.SecurityContext;
+import org.nuvola.oauth.shared.UserProfile;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +22,7 @@ public class SessionController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public CurrentUser user(Principal user) {
+    public UserProfile user(Principal user) {
         return securityContext.getCurrentUser(user);
     }
 }

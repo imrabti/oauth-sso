@@ -7,7 +7,7 @@ import org.nuvola.myapp.client.application.ApplicationPresenter.MyProxy;
 import org.nuvola.myapp.client.application.ApplicationPresenter.MyView;
 import org.nuvola.myapp.client.services.SessionService;
 import org.nuvola.myapp.client.util.AbstractAsyncCallback;
-import org.nuvola.myapp.shared.vo.CurrentUser;
+import org.nuvola.oauth.shared.UserProfile;
 
 import com.google.gwt.user.client.Window;
 import com.google.web.bindery.event.shared.EventBus;
@@ -51,10 +51,10 @@ public class ApplicationPresenter extends Presenter<MyView, MyProxy> implements 
     }
 
     private void loadCurrentUser() {
-        dispatch.execute(sessionService.currentUser(), new AbstractAsyncCallback<CurrentUser>() {
+        dispatch.execute(sessionService.currentUser(), new AbstractAsyncCallback<UserProfile>() {
             @Override
-            public void onReceive(CurrentUser currentUser) {
-                Window.alert("You are authenticated : " + currentUser.getUsername());
+            public void onReceive(UserProfile profile) {
+                Window.alert("You are authenticated : " + profile.getUserName());
             }
         });
     }
