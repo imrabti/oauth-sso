@@ -26,16 +26,5 @@ security:
       clientId: myapp
       clientSecret: KDV3FT2wCMnmzwzH
     resource:
-      jwt:
-        keyValue: |
-          -----BEGIN PUBLIC KEY-----
-          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApc6d3RkcvNYy6pTI4P4F
-          pz0XNZqxo1Bs9K1sXzW99K9EzVNCDy5Ws3buGM3Apx0ORc5LlteU/sZXBBBNRQFv
-          4R/SG09zSU11uNhZ21B+n0JK6dUIBvOSAv+ciPTfPD8MDRotyGbhnI49jzhyt8RR
-          Mqq6aMtvDwNSjZxx2my15gMBOMIG7IeFUYiDjfCq6aW0LJD94RbTZL4jYtV0cBDc
-          U8B05wlIDnM9kRWQ5dTXqkMQAoeQBF3+TOdSe7FelFPnLG8CPzTzOqWTBCfGQwhL
-          Ct9MmJlo/4K+/Z7KyvCiAlYA/0sk5PvVB4SlKLAoLnfF+z8IDTlGyn5fa6TPHdfm
-          LwIDAQAB
-          -----END PUBLIC KEY-----
-      id: openid
-      serviceId: ${PREFIX:}resource
+      user-info-uri: http://localhost:8080/uaa/user
+      tokenInfoUri: http://localhost:8080/uaa/oauth/check_token
